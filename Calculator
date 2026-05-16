@@ -1,0 +1,51 @@
+"""CALCULATOR"""
+
+def main():
+    run_ = True
+    print("This is my calculator".)
+    while run_ == True:
+        opp_()
+        continue_ = input("Would you like to continue or nah (YES OR NO): ") # sees if the user wants to continue
+        if continue_ == "YES":
+            run_ = True
+        elif continue_ == "NO":
+            run_ = False
+            print("Thank you for using my calculator")
+
+def opp_(): # all operations
+    user_choice = input("What operation would you like? (use ALL CAPS) : ")
+    if user_choice == "ADDITION":
+        add_()
+    elif user_choice == "SUBTRACTION":
+        sub_()
+    elif user_choice == "MULTIPLICATION":
+        mult_()
+    elif user_choice == "DIVISION":
+        divide_()    
+    
+def mult_(): # this function multiplies two values given by the user and returns result
+    user_first_num = float(input("What is the first number you want to multiply: "))
+    user_second_num = float(input("What is the second number you want to multiply: "))
+    product = float(user_first_num * user_second_num)
+    print(f"The product of {str(user_first_num)} and {str(user_second_num)} is {str(product)}.")
+
+def divide_(): # this function divides two values given by the user and returns result
+    user_first_num = float(input("What is the first number you want to divide: "))
+    user_second_num = float(input("What is the second number you want to divide: "))
+    quotient = float(user_first_num / user_second_num)
+    print(f"The quotient of {str(user_first_num)} and {str(user_second_num)} is {str(quotient)}.")
+
+def add_(): # this function adds two values given by the user and returns result
+    user_first_num = float(input("What is the first number you want to add: "))
+    user_second_num = float(input("What is the second number you want to add: "))
+    user_sum = float(user_first_num + user_second_num)
+    print(f"The sum of {str(user_first_num)} and {str(user_second_num)} is {str(user_sum)}.")
+
+def sub_(): # this function subtracts two values given by the user and returns result
+    user_first_num = float(input("What is the first number you would like to subtract: "))
+    user_second_num = float(input("What is the second number you would like to subtract: "))
+    difference = float(user_first_num - user_second_num)
+    print(f"The difference between {str(user_first_num)} and {str(user_second_num)} is {str(difference)}.")
+
+if __name__ == "__main__":
+    main()
