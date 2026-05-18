@@ -22,7 +22,6 @@ def main():
 
         player_name = f'Player {str(player)}'
         user_choice = int(input(f"{player_name} would you like to remove 1 or 2 stones? " ))
-
         print() #space
 
         if user_choice == 2 and num_of_stones ==1:
@@ -32,16 +31,14 @@ def main():
                 user_choice = int(input("Please enter 1 or 2: "))
             num_of_stones = num_of_stones - user_choice
         change_player()
-    winner()
-    print("Game over") #while loop completed which means there are no more stones left
+    winner() #while loop completed which means there are no more stones left
 
 
-def winner():
+def winner(): #declares a winner
     global player
-    if player == 1:
-        print('player 1')
-    elif player == 2:
-        print('player 2')    
+    player_name = f'Player {str(player)}'
+    winner_msg = f'{player_name} wins!'
+    print(winner_msg)
     
 def change_player(): # changes player each turn
         global player
