@@ -6,22 +6,31 @@ The two players continue until the center pile has run out of stones.
 The last player to take a stone loses."""
 player = 1
 
+if player == 1:
+    player_name = 'Player 1'
+elif player == 2:
+    player_name = 'Player 2'   
+
+
 def main():
     num_of_stones = 20 # starting num of stones
-    msg = "Would you like to remove 1 or 2 stones? "
+    invalid_input = 3
 
     while num_of_stones > 0: # Checks if the stones ran out
-        if player == 1:
-            print('player one')
-        elif player == 2:
-            print('player two')
-        print(f"There are {str(num_of_stones)} stones left.")
-        user_choice = int(input(msg)) #asks the user how many stones to remove
+        print(f'There are {str(num_of_stones)} stones left.')
+
+        player_name = f'Player {str(player)}'
+        user_choice = int(input(f"{player_name} would you like to remove 1 or 2 stones? " ))
+
         print() #space
+
         if user_choice == 2 and num_of_stones ==1:
             print("You can only remove one") #in the case that the user removes too many stones (e.g: 1 stone left, remove two, stones remaining = -1)
         else:
+            while (user_choice >= invalid_input):
+                user_choice = int(input("Please enter 1 or 2: "))
             num_of_stones = num_of_stones - user_choice
+
         change_player()
     print("Game over") #while loop completed which means there are no more stones left
 
@@ -29,7 +38,7 @@ def change_player(): # changes player each turn
         global player
         if player == 1: 
             player = player + 1
-        else:
+        elif player == 2:
             player = player -1    
 if __name__ == '__main__':
     main()
