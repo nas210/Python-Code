@@ -4,12 +4,11 @@ The two players alternate turns
 On a given turn, a player may take either 1 or 2 stone from the center pile
 The two players continue until the center pile has run out of stones.
 The last player to take a stone loses."""
-
+player = 1
 
 def main():
     num_of_stones = 20 # starting num of stones
     msg = "Would you like to remove 1 or 2 stones? "
-    player = 1
 
     while num_of_stones > 0: # Checks if the stones ran out
         if player == 1:
@@ -23,12 +22,14 @@ def main():
             print("You can only remove one") #in the case that the user removes too many stones (e.g: 1 stone left, remove two, stones remaining = -1)
         else:
             num_of_stones = num_of_stones - user_choice
-        if player == 1: # changes player
-            player = player + 1
-        else:
-            player = player -1
+        change_player()
     print("Game over") #while loop completed which means there are no more stones left
 
-
+def change_player(): # changes player each turn
+        global player
+        if player == 1: 
+            player = player + 1
+        else:
+            player = player -1    
 if __name__ == '__main__':
     main()
