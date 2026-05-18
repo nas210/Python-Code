@@ -13,6 +13,7 @@ elif player == 2:
 
 
 def main():
+    global player
     num_of_stones = 20 # starting num of stones
     invalid_input = 3
 
@@ -30,9 +31,13 @@ def main():
             while (user_choice >= invalid_input):
                 user_choice = int(input("Please enter 1 or 2: "))
             num_of_stones = num_of_stones - user_choice
-
         change_player()
+
     print("Game over") #while loop completed which means there are no more stones left
+    if player == 2:
+        print('player 1')
+    elif player == 1:
+        print('player 2')
 
 def change_player(): # changes player each turn
         global player
