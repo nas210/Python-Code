@@ -1,0 +1,24 @@
+"Puts a square in the middle of the screen"
+from graphics import Canvas
+
+CANVAS_WIDTH = 400
+CANVAS_HEIGHT = 300
+THIS_BIG = 144
+CENTER_X = 160
+CENTER_Y = 160
+
+def main():
+    x_cord = (CANVAS_WIDTH - THIS_BIG)/2
+    y_cord = (CANVAS_HEIGHT - THIS_BIG)/2
+    end_x = x_cord + THIS_BIG
+    end_y = y_cord + THIS_BIG
+
+    canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+    canvas.create_rectangle(x_cord,y_cord,end_x, end_y)
+    
+
+
+# There is no need to edit code beyond this point
+
+if __name__ == '__main__':
+    main()
