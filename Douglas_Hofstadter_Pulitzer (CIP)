@@ -18,7 +18,7 @@ def user_input(): # takes a number from the user
 
 def odd_even(): #determains whether to number is odd or even
     global user_choice
-    while user_choice != 1:
+    while user_choice != 1: # repeats sequence until user_choice = 1
         odd = int((3 * user_choice) + 1)
         even = int(user_choice / 2)
         remainder = int(user_choice % 2)
