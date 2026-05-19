@@ -18,17 +18,18 @@ def user_input(): # takes a number from the user
 
 def odd_even(): #determains whether to number is odd or even
     global user_choice
-    odd = int((3 * user_choice) + 1)
-    even = int(user_choice / 2)
-    remainder = int(user_choice % 2)
+    while user_choice != 1:
+        odd = int((3 * user_choice) + 1)
+        even = int(user_choice / 2)
+        remainder = int(user_choice % 2)
 
-    if remainder == 1: # if the remainder is 1, the number is odd
-        print(f'{str(user_choice)} is odd, so I make 3n + 1: {str(odd)}')
-        user_choice = odd # since we have to save this, we set user_choice = odd
-    else:
-        print(f'{str(user_choice)} is even, so I take half: {str(even)}')
-        user_choice = even # '' ... user_choice = even
-    
+        if remainder == 1: # if the remainder is 1, the number is odd
+            print(f'{str(user_choice)} is odd, so I make 3n + 1: {str(odd)}')
+            user_choice = odd # since we have to save this, we set user_choice = odd
+        else:
+            print(f'{str(user_choice)} is even, so I take half: {str(even)}')
+            user_choice = even # '' ... user_choice = even
+        
 
     
 if __name__ == "__main__":
